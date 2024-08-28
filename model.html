@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Chat Website</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <tr>
+    <td>Falafel</td>
+    <td>$10.00</td>
+</tr>
+<tr>
+    <td>Pasta Salad</td>
+    <td>$12.00</td>
+</tr>
+<tr>
+    <td>Dessert</td>
+    <td>$8.00</td>
+</tr>
+  <div class="container">
+    <header>
+      <h1>Welcome to Video Chat</h1>
+    </header>
+    <main>
+      <div class="video-grid">
+        <div class="remote-video">
+          <video id="remoteVideo" autoplay></video>
+        </div>
+        <div class="local-video">
+          <video id="localVideo" autoplay muted></video>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="joinButton">Join Video Chat</button>
+        <button id="endButton">End Call</button>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Video Chat Website</p>
+    </footer>
+  </div>
+  <script src="code.js"></script>
+</body>
+</html>
