@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4">Video Chat</h1>
+            <p class="text-xl text-gray-300">Connect with friends and family in real-time</p>
+        </header>
+
+        <main class="max-w-md mx-auto">
+            <div class="glass-effect rounded-2xl p-8 shadow-xl">
+                <div class="text-center mb-8">
+                    <i class="fas fa-video text-4xl text-blue-400 mb-4"></i>
+                    <h2 class="text-2xl font-semibold mb-2">Start a Video Call</h2>
+                    <p class="text-gray-300">Enter a room name to create or join a video chat</p>
+                </div>
+
+                <form id="joinForm" class="space-y-6">
+                    <div class="relative">
+                        <input type="text" id="roomInput" 
+                               class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500 pl-12"
+                               placeholder="Enter room name"
+                               required>
+                        <i class="fas fa-door-open absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-blue-500 hover:bg-blue-600 px-4 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                        <i class="fas fa-video"></i>
+                        <span>Join Room</span>
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center text-sm text-gray-400">
+                    <p>Share the room name with others to join your call</p>
+                </div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-effect rounded-xl p-6 text-center">
+                    <i class="fas fa-shield-alt text-3xl text-green-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Secure</h3>
+                    <p class="text-sm text-gray-300">End-to-end encrypted video calls</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center">
+                    <i class="fas fa-users text-3xl text-blue-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Simple</h3>
+                    <p class="text-sm text-gray-300">Easy to use interface</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center">
+                    <i class="fas fa-bolt text-3xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Fast</h3>
+                    <p class="text-sm text-gray-300">Low latency connections</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('joinForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const roomName = document.getElementById('roomInput').value.trim();
+            if (roomName) {
+                window.location.href = `room.html?room=${encodeURIComponent(roomName)}`;
+            }
+        });
+    </script>
+</body>
+</html> 

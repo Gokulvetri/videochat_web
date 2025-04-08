@@ -1,0 +1,12 @@
+{
+  "name": "videochat-web",
+  "version": "1.0.0",
+  "description": "WebRTC Video Chat Application",
+  "main": "signaling-server.js",
+  "scripts": {
+    "start": "node signaling-server.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+} 
