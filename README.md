@@ -1,1 +1,1 @@
-A complete full fnctional Video Chat website 
+A complete full functional Video Chat website 
